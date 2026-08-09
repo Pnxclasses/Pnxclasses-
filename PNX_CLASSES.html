@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PNX CLASSES | Mathematics & Science</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7ff;color:#172033}
+header{background:linear-gradient(135deg,#3d2bdc,#7557ff);color:#fff;padding:16px 6%;position:sticky;top:0;z-index:10}
+.nav{max-width:1150px;margin:auto;display:flex;justify-content:space-between;align-items:center}.logo{font-size:25px;font-weight:800}nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:bold}
+.hero{padding:70px 6%;background:linear-gradient(135deg,#eeeaff,#fff)}.hero-in{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.badge{display:inline-block;background:#ddd8ff;color:#3926d9;padding:8px 14px;border-radius:30px;font-weight:bold}h1{font-size:clamp(40px,7vw,70px);margin:15px 0 10px;line-height:1}.hero p{font-size:18px;color:#5e6675}.btn{display:inline-block;margin-top:18px;padding:13px 18px;border:0;border-radius:11px;background:#3926d9;color:#fff;text-decoration:none;font-weight:bold;cursor:pointer}.btn.alt{background:#fff;color:#3926d9;border:1px solid #d8d3ff;margin-left:7px}
+.card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 10px 30px #1d275014;border:1px solid #eceef6}section{padding:55px 6%}.wrap{max-width:1150px;margin:auto}.title{text-align:center;margin-bottom:30px}.title h2{font-size:34px;margin-bottom:5px}.muted{color:#697386}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.icon{font-size:35px}
+.subject{font-size:20px;font-weight:bold}.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+input{width:100%;padding:13px;border:1px solid #d9dce6;border-radius:10px;margin:8px 0;font-size:15px}.admin{background:#151a2a;color:#fff}.admin input{background:#fff}.status{padding:10px;border-radius:10px;background:#eef0f7;margin-top:10px}
+footer{background:#111625;color:#dfe4f0;text-align:center;padding:30px}
+@media(max-width:800px){nav{display:none}.hero-in,.contact,.cards{grid-template-columns:1fr}.hero{padding-top:45px}.btn.alt{margin-left:0}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">🎓 PNX CLASSES</div><nav>
+<a href="#home">Home</a><a href="#classes">Classes</a><a href="#live">Live Class</a><a href="#contact">Contact</a>
+</nav></div></header>
+
+<section class="hero" id="home"><div class="hero-in">
+<div><span class="badge">Class 6th – 10th</span><h1>PNX CLASSES</h1>
+<h2>Mathematics & Science</h2>
+<p>Concept clear करो • Practice करो • Exam में बेहतर perform करो</p>
+<p><b>Teacher: Priyanshu</b></p>
+<a class="btn" href="#live">🎥 Join Live Class</a>
+<a class="btn alt" href="#contact">📞 Contact</a></div>
+<div class="card"><h2>📚 What We Teach</h2><p>➗ Mathematics</p><p>🧪 Science</p><p>🎯 Classes 6th–10th</p><p>📝 Homework & Practice</p><p>🎥 Online Live Classes</p></div>
+</div></section>
+
+<section id="classes"><div class="wrap"><div class="title"><h2>📚 Classes</h2><p class="muted">Class 6th से 10th तक</p></div>
+<div class="cards">
+<div class="card"><div class="icon">➗</div><h3>Mathematics</h3><p class="muted">Concepts, examples, practice questions और exam preparation.</p></div>
+<div class="card"><div class="icon">🧪</div><h3>Science</h3><p class="muted">Physics, Chemistry और Biology के important concepts.</p></div>
+<div class="card"><div class="icon">📝</div><h3>Practice</h3><p class="muted">Homework, MCQs और revision के साथ regular practice.</p></div>
+</div></div></section>
+
+<section id="live" style="background:#eeeaff"><div class="wrap"><div class="title"><h2>🎥 Live Class</h2><p class="muted">नीचे दिए button से Google Meet class join करें</p></div>
+<div class="card" style="max-width:700px;margin:auto;text-align:center">
+<h3>🔴 Today's Live Class</h3><p id="meetText" class="muted">Live class link अभी set नहीं किया गया है।</p>
+<a id="meetBtn" class="btn" href="#" target="_blank" style="display:none">🎥 Join Google Meet</a>
+</div></div></section>
+
+<section id="contact"><div class="wrap"><div class="title"><h2>📞 Contact PNX CLASSES</h2><p class="muted">Admission और class information के लिए संपर्क करें</p></div>
+<div class="contact"><div class="card"><h3>👨‍🏫 Priyanshu</h3><p>Mathematics & Science</p><p>Classes 6th–10th</p><a class="btn" href="tel:9756304616">📞 Call Now</a><a class="btn alt" href="https://wa.me/919756304616" target="_blank">💬 WhatsApp</a></div>
+<div class="card"><h3>📢 Notice</h3><p class="muted">Live class का नया link नीचे Admin section में save किया जा सकता है।</p></div></div></div></section>
+
+<section class="admin" id="admin"><div class="wrap"><div class="title"><h2>⚙️ Live Class Link Settings</h2><p style="color:#cbd1df">यहाँ नया Google Meet link डालें</p></div>
+<div class="card" style="max-width:700px;margin:auto;color:#172033">
+<label><b>Google Meet Link</b></label><input id="linkInput" placeholder="https://meet.google.com/..." type="url">
+<button class="btn" onclick="saveLink()">💾 Save Live Class Link</button>
+<button class="btn alt" onclick="clearLink()">Remove Link</button>
+<div id="saveStatus" class="status">Link browser में locally save होगा।</div>
+</div></div></section>
+
+<footer><h3>🎓 PNX CLASSES</h3><p>Mathematics • Science | Class 6th–10th</p><p>Teacher: Priyanshu</p><p>📞 9756304616</p></footer>
+
+<script>
+function updateMeet(){
+ const link=localStorage.getItem("pnxMeetLink");
+ const btn=document.getElementById("meetBtn"),text=document.getElementById("meetText");
+ if(link){btn.href=link;btn.style.display="inline-block";text.textContent="Live class link ready है — Join करें!";}
+ else{btn.style.display="none";text.textContent="Live class link अभी set नहीं किया गया है।";}
+}
+function saveLink(){
+ let link=document.getElementById("linkInput").value.trim();
+ if(!link){alert("पहले Google Meet link डालें।");return}
+ if(!/^https?:\/\//i.test(link)){link="https://"+link}
+ localStorage.setItem("pnxMeetLink",link);
+ document.getElementById("saveStatus").textContent="✅ Live class link save हो गया।";
+ updateMeet();
+}
+function clearLink(){localStorage.removeItem("pnxMeetLink");document.getElementById("linkInput").value="";document.getElementById("saveStatus").textContent="Link remove हो गया।";updateMeet()}
+updateMeet();
+</script>
+</body>
+</html>
